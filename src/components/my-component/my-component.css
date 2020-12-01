@@ -1,3 +1,6 @@
+@import '../../styles/variables.css';
+
 :host {
   display: block;
+  background-color: changeLightness(var(--color-primary), 90%);
 }

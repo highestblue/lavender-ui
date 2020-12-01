@@ -5,7 +5,12 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Border, Depth } from "./components/box/lavender-box";
 export namespace Components {
+    interface LavenderBox {
+        "border": Border;
+        "depth": Depth;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -22,6 +27,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLLavenderBoxElement extends Components.LavenderBox, HTMLStencilElement {
+    }
+    var HTMLLavenderBoxElement: {
+        prototype: HTMLLavenderBoxElement;
+        new (): HTMLLavenderBoxElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -29,10 +40,15 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "lavender-box": HTMLLavenderBoxElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface LavenderBox {
+        "border"?: Border;
+        "depth"?: Depth;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -48,6 +64,7 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "lavender-box": LavenderBox;
         "my-component": MyComponent;
     }
 }
@@ -55,6 +72,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "lavender-box": LocalJSX.LavenderBox & JSXBase.HTMLAttributes<HTMLLavenderBoxElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
