@@ -9,6 +9,7 @@ export const config: Config = {
     {
       type: 'dist',
       esmLoaderPath: '../loader',
+      copy: [{ src: '../tailwind.config.js' }],
     },
     {
       type: 'dist-custom-elements-bundle',
