@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type                                        | Default  |
-| -------- | --------- | ----------- | ------------------------------------------- | -------- |
-| `border` | `border`  |             | `"none" \| "normal" \| "thick" \| "thin"`   | `'none'` |
-| `depth`  | `depth`   |             | `"deep" \| "none" \| "normal" \| "shallow"` | `'none'` |
+| Property | Attribute | Description | Type                            | Default  |
+| -------- | --------- | ----------- | ------------------------------- | -------- |
+| `border` | `border`  |             | `"none" \| "normal" \| "thick"` | `"none"` |
+| `depth`  | `depth`   |             | `"deep" \| "none" \| "shallow"` | `"none"` |
 
 
 ----------------------------------------------
