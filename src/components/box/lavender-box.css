@@ -1,33 +1,23 @@
-@import '../../styles/variables.css';
-
 :host {
-  display: block;
+  @apply block;
 }
 
 :host(.border--none) {
-  border: none;
-}
-
-:host(.border--thin) {
-  border: 1px solid var(--color-monochrome);
+  @apply border-none;
 }
 
 :host(.border--normal) {
-  border: 2px solid var(--color-monochrome);
+  @apply border-solid border-gray-500 border-2;
 }
 
 :host(.border--thick) {
-  border: 3px soild var(--color-monochrome);
+  @apply border-solid border-gray-500 border-4;
 }
 
 :host(.depth--shallow) {
-  box-shadow: 1px 1px 2px var(--color-monochrome);
-}
-
-:host(.depth--normal) {
-  box-shadow: 2px 2px 3px var(--color-monochrome);
+  @apply shadow-sm;
 }
 
 :host(.depth--deep) {
-  box-shadow: 3px 3px 4px var(--color-monochrome);
+  @apply shadow-lg;
 }

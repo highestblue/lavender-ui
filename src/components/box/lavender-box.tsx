@@ -1,23 +1,26 @@
-import { Component, h, Host, Prop } from '@stencil/core';
-import classNames from 'classnames';
+import { Component, h, Host, Prop } from "@stencil/core";
+import classNames from "classnames";
 
-export type Border = 'none' | 'thin' | 'normal' | 'thick';
-export type Depth = 'none' | 'shallow' | 'normal' | 'deep';
+export type Border = "none" | "normal" | "thick";
+export type Depth = "none" | "shallow" | "deep";
 
 @Component({
-  tag: 'lavender-box',
-  styleUrl: 'lavender-box.css',
+  tag: "lavender-box",
+  styleUrl: "lavender-box.css",
   shadow: true,
 })
 export class LavenderBox {
   /* Border */
-  @Prop() border: Border = 'none';
+  @Prop() border: Border = "none";
 
   /* Depth */
-  @Prop() depth: Depth = 'none';
+  @Prop() depth: Depth = "none";
 
   render() {
-    const classes = classNames([`border--${this.border}`, `depth--${this.depth}`]);
+    const classes = classNames([
+      `border--${this.border}`,
+      `depth--${this.depth}`,
+    ]);
     return (
       <Host class={classes}>
         <slot></slot>
